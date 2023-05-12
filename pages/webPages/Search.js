@@ -97,8 +97,14 @@ const Search = () => {
   // destructuring the router.query object to get the details passed by the user of the website which we can further used to make fetch queries to the server for rendering the available lands or hotels or some thing of that sort
   const { location, startDate, endDate, noOfGuests } = router.query;
   console.log(startDate);
-  const formattedStartDate = format(new Date(startDate), "dd MM yy");
-  const formattedendDate = format(new Date(endDate), "dd MM yy");
+  const formattedStartDate = format(
+    new Date(startDate.toLocaleString()),
+    "dd MMMM yy"
+  );
+  const formattedendDate = format(
+    new Date(endDate.toLocaleString()),
+    "dd MMMM yy"
+  );
   const range = `${formattedStartDate} to ${formattedendDate}`;
 
   //   console.log(searchResults);
