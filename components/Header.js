@@ -33,8 +33,8 @@ function Header({ placeholder }) {
       pathname: "/webPages/Search",
       query: {
         location: searchInput,
-        startDate: startDate.toDateString(), // now this .toISOString method converts the date object to string and then passes it to the query field of the url of the page
-        endDate: endDate.toDateString(),
+        startDate: startDate.toISOString(), // now this .toISOString method converts the date object to string and then passes it to the query field of the url of the page
+        endDate: endDate.toISOString(),
         noOfGuests: noOfGuests,
       },
     });
