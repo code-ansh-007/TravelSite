@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { useRouter } from "next/router";
 import React from "react";
 import Footer from "../../components/Footer";
@@ -98,13 +98,10 @@ const Search = () => {
   const { location, startDate, endDate, noOfGuests } = router.query;
   console.log(startDate);
   const formattedStartDate = format(
-    new Date(startDate.toLocaleString()),
+    new Date(parseISO(startDate)),
     "dd MMMM yy"
   );
-  const formattedendDate = format(
-    new Date(endDate.toLocaleString()),
-    "dd MMMM yy"
-  );
+  const formattedendDate = format(new Date(parseISO(endDate)), "dd MMMM yy");
   const range = `${formattedStartDate} to ${formattedendDate}`;
 
   //   console.log(searchResults);
